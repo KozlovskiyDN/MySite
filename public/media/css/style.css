@@ -1,0 +1,83 @@
+body {
+background-image:url(../img/bg26.jpg)	;
+background-color:white;
+margin:0;	
+padding:0;	
+}
+#logo {
+	height:200px;
+	
+	
+}
+#header {
+	height:200px;
+	overflow:hidden;
+	background-image:url(../img/bg.jpg)	;
+}
+#logotxt {
+	float:right;
+	padding:10px;
+	padding-top:40px;
+	margin-top:0;
+	color:white;
+	text-shadow:1px 1px 1px black;
+	margin-right:30px;
+		
+}
+
+.topmenu	a:link {text-decoration: none; } 
+.topmenu   a:visited { text-decoration: none; } 
+.topmenu   a:active { text-decoration: none; }
+.topmenu   a:hover {text-decoration: underline; color: red; }	
+.topmenu {	
+display:flex;
+width:100%;
+margin:0 auto;
+}
+.topmenu a{
+	flex:1;
+	border-right:solid 1px Azure;
+	background:LightSkyBlue;
+	text-align:center;
+	padding: 20 0;
+	color:Azure;
+
+}
+.moy {
+	margin-top:20px;
+	margin-bottom:150px;
+}
+.moy1 {
+	margin-top:20px;
+}
+.footer {
+	text-align:center;
+	padding-top:50px;
+	padding-bottom:50px;
+	background:SteelBlue;
+	color:AliceBlue;
+	margin-top:20px;
+	position:fixed;
+	bottom:0;
+	width:100%;
+}
+
+@media screen and (max-width: 600px) {
+	#header {
+		height:100px;
+		
+	}
+	#logo {
+		height:50px;
+		
+	}
+	
+	.moy {
+	margin-top:10px;	
+	margin-bottom:120px;	
+	}
+	.topmenu {
+		
+		flex-direction:colum;
+	}
+}
