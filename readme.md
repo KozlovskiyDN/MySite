@@ -28,6 +28,17 @@
 - git status
 - git push
  
+ 
+  Для заливки на сервер:
+- cd domains 
+- git add *
+- git commit -m "Izmemenie_1"
+- git status
+- git push
+ 
+ 
+ 
+ 
 ## Used technologies
 
 -apache php 7.2
