@@ -31,17 +31,9 @@
  создание новой ветки
 - git branch user 
 - git checkout user
- 
- 
- 
-  Для заливки на сервер:
-- cd domains 
-- git add *
-- git commit -m "Izmemenie_1"
-- git status
-- git push
- 
- 
+
+ Подключаем изменения пользователя 
+- git merge user 
  
  
 ## Used technologies
