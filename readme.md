@@ -27,6 +27,11 @@
 - git commit -m "Izmemenie_1"
 - git status
 - git push
+
+ создание новой ветки
+- git branch user 
+- git checkout user
+ 
  
 ## Used technologies
 
