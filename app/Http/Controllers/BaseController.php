@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Maintest;
 
 class BaseController extends Controller
 {
     public function getIndex() {
-		return view ("welcome");
+		$obj=Maintest::where("url","index")->first();
+		return view("static",compact("obj"));
 	}
 }

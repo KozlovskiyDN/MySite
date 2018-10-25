@@ -61,6 +61,23 @@ margin:0 auto;
 	bottom:0;
 	width:100%;
 }
+.moy2 {
+	text-align:right;
+	padding:5px;
+	margin-right:10px;
+	color:white;
+}
+
+.moy2  a{
+	color:white;
+}
+
+.feed {
+	padding:20px;
+	margin-top:30px;
+	
+}
+
 
 @media screen and (max-width: 600px) {
 	#header {
