@@ -20,6 +20,8 @@ Route::post('/home', 'HomeController@postIndex');
 
 Route::get('/feedback', 'FeedbackController@getIndex');
 
+Route::get('catalog/{id}','CatalogController@getIndex');
+
 /* 
 Всегда в конце файла!
  */
