@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Окт 25 2018 г., 16:33
+-- Время создания: Окт 26 2018 г., 18:49
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- База данных: `mysite`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `catalogs`
+--
+
+CREATE TABLE `catalogs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `vip` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `catalogs`
+--
+
+INSERT INTO `catalogs` (`id`, `name`, `body`, `pic`, `parent_id`, `vip`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Lamp', 'Discription kategorii', 'lamp.png', 0, 0, 0, NULL, NULL),
+(2, 'Lak', 'Discriotion katrgorii ', 'lak.png', NULL, NULL, NULL, NULL, NULL),
+(3, 'Insrument', 'discription', 'inst.png', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -46,7 +73,8 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`id`, `user_id`, `body`, `ball`, `showhide`, `url`, `created_at`, `updated_at`) VALUES
 (1, 1, '<p><strong>sghdfgh</strong></p>\r\n', 2, 'hide', NULL, '2018-10-25 12:24:49', '2018-10-25 12:24:49'),
 (2, 1, '<h1><span style=\"color:#e74c3c\"><span style=\"font-size:26px\"><strong>Великолепный сайт!!!</strong></span></span></h1>\r\n\r\n<h2><span style=\"color:#f1c40f\"><span style=\"font-size:26px\"><strong>Мне все понравилось!</strong></span></span></h2>\r\n\r\n<h3 style=\"text-align:center\"><span style=\"color:#2ecc71\"><span style=\"font-size:26px\"><strong>Удачи!</strong></span></span></h3>\r\n\r\n<p><span style=\"color:#2ecc71\"><span style=\"font-size:26px\"><strong><img alt=\"yes\" src=\"http://localhost/media/ckeditor/plugins/smiley/images/thumbs_up.png\" style=\"height:23px; width:23px\" title=\"yes\" /></strong></span></span></p>\r\n', 5, 'show', NULL, '2018-10-25 13:27:58', '2018-10-25 13:27:58'),
-(3, 1, '<h1><strong>Все класно! Прекрасный сайт....</strong></h1>\r\n', 5, 'show', NULL, '2018-10-25 13:32:34', '2018-10-25 13:32:34');
+(3, 1, '<h1><strong>Все класно! Прекрасный сайт....</strong></h1>\r\n', 5, 'show', NULL, '2018-10-25 13:32:34', '2018-10-25 13:32:34'),
+(4, 1, '<p>Проверка на запуск скрипта!</p>\r\n\r\n<p>&lt;/p&gt;&lt;script&gt;alert(АЛЕРТ)&lt;/script&gt;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&lt;script&gt;alert(АТENTION)&lt;/script&gt;</p>\r\n\r\n<p>Проверка на фреймы!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\n<code>&lt;frameset cols=&quot;100,*&quot;&gt;\r\n  &lt;frame src=&quot;http://tut.by&quot; name=&quot;MENU&quot;&gt;\r\n  &lt;frame src=&quot;http://googl.com&quot; name=&quot;CONTENT&quot;&gt;\r\n &lt;/frameset&gt;</code></pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><code>Сылки</code></p>\r\n\r\n<p><code>http://googl.com</code></p>\r\n\r\n<p><code>googl.com</code></p>\r\n\r\n<p><a href=\"http://googl.com\">Переход на Гугл</a></p>\r\n\r\n<p>&nbsp;</p>\r\n', 5, 'show', NULL, '2018-10-26 12:34:52', '2018-10-26 12:34:52');
 
 -- --------------------------------------------------------
 
@@ -96,7 +124,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2018_10_25_121815_create_maintests_table', 2),
-(4, '2018_10_25_145110_create_feedback_table', 3);
+(4, '2018_10_25_145110_create_feedback_table', 3),
+(5, '2018_10_26_154631_create_catalogs_table', 4);
 
 -- --------------------------------------------------------
 
@@ -139,6 +168,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 --
+-- Индексы таблицы `catalogs`
+--
+ALTER TABLE `catalogs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `feedback`
 --
 ALTER TABLE `feedback`
@@ -174,10 +209,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `catalogs`
+--
+ALTER TABLE `catalogs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT для таблицы `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `maintests`
@@ -189,7 +230,7 @@ ALTER TABLE `maintests`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
