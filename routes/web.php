@@ -22,6 +22,10 @@ Route::get('/feedback', 'FeedbackController@getIndex');
 
 Route::get('catalog/{id}','CatalogController@getIndex');
 
+Route::get('categorys','ProductController@getAll');
+
+Route::group(['middleware'=>['authuser']],function(){Route::get('basket','BasketController@getIndex');});
+
 /* 
 Всегда в конце файла!
  */

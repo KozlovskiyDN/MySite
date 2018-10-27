@@ -78,8 +78,21 @@ margin:0 auto;
 	margin-top:30px;
 	
 }
-
-
+.product {
+	float:left;
+	margin-right:10px;
+	
+}
+.showhide {
+	display:none;
+	
+}
+.link {
+	background:grey;
+	color:gold;
+	margin-top:10px;
+	cursor:pointer;
+}
 @media screen and (max-width: 600px) {
 	#header {
 		height:100px;

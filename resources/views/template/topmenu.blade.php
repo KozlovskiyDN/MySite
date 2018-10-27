@@ -1,8 +1,8 @@
 <nav class="topmenu">
-<a href="/">Главная</a>
-<a href="about">О компании</a>
-<a href="servis">Услуги</a>
-<a href="#">Товары</a>
-<a href="contact">Контакты</a>
+<a href="{{ asset('/')}}">Главная</a>
+<a href="{{ asset('about')}}">О компании</a>
+<a href="{{ asset('servis')}}">Услуги</a>
+<a href="{{ asset('categorys')}}">Товары</a>
+<a href="{{ asset('contact')}}">Контакты</a>
 
 </nav>

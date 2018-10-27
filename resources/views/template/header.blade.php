@@ -11,13 +11,14 @@
                            
                         @else
                                 <a class="nav-link " href="{{ asset('home') }}" >
-                                    {{ Auth::user()->name }}   |
+                                    {{ Auth::user()->name }}
                                 </a>
-                                <a class="nav-link "  href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                                {!! Form::open(['url' => 'logout']) !!}
+                <button type="submit" class="logout">
+                    <i class="fa fa-sign-out fa-fw"></i>
+                    <span class="title">{{ trans('quickadmin::admin.partials-sidebar-logout') }}</span>
+                </button>
+                {!! Form::close() !!}
 
 
                         @endguest
