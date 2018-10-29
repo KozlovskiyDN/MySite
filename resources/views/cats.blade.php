@@ -22,7 +22,7 @@
 <img class="product" src="{{asset('media/img/no.png')}}"/>	
 @endif
 <h3>
-<a href="#" class="product_link">
+<a href="{{asset('product/'.$one->id)}}" class="product_link">
 {{$one->name}}
 </a>
 </h3>

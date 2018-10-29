@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -11,4 +12,13 @@ class ProductController extends Controller
 		return view('cats',compact('cats'));
 		
 	}
+	
+	public function getOne($id=null){
+		$obj=Product::find($id);
+		return view('product',compact('obj'));
+		
+	}
+	
+	
+	
 }

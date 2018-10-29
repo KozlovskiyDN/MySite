@@ -93,6 +93,43 @@ margin:0 auto;
 	margin-top:10px;
 	cursor:pointer;
 }
+
+.N_img {
+	
+	
+}
+
+* {box-sizing: border-box;}
+.caption-shadow {
+  width: 400px;
+  margin: 50px auto 0;
+  position: relative;
+  border: 5px solid #FAAB1B;
+}
+.caption-shadow img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.caption-shadow figcaption {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FAAB1B;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 -10px 20px -5px hsla(0, 0%, 0%, .4);
+}
+
+
+
+
+
 @media screen and (max-width: 600px) {
 	#header {
 		height:100px;
