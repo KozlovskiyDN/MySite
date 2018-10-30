@@ -43,7 +43,7 @@ class="btn btn-primary btn-block">
 
 </article>
 <aside class="col-md-2 moy">Vidget
-
+<a class="btn feed btn-block btn-lg btn-warning" href="{{asset('basket')}}">Моя корзина ({{$cookie_count}})</a>	
 @include('template.leftmenu')
 
 

@@ -2,10 +2,10 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Oct 27, 2018 at 02:43 PM
--- Server version: 5.7.20
--- PHP Version: 7.2.0
+-- Хост: 127.0.0.1:3307
+-- Время создания: Окт 30 2018 г., 18:25
+-- Версия сервера: 5.7.20
+-- Версия PHP: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mysite`
+-- База данных: `mysite`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `catalogs`
+-- Структура таблицы `catalogs`
 --
 
 CREATE TABLE `catalogs` (
@@ -41,7 +41,7 @@ CREATE TABLE `catalogs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `catalogs`
+-- Дамп данных таблицы `catalogs`
 --
 
 INSERT INTO `catalogs` (`id`, `name`, `body`, `pic`, `parent_id`, `vip`, `user_id`, `created_at`, `updated_at`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `catalogs` (`id`, `name`, `body`, `pic`, `parent_id`, `vip`, `user_i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Структура таблицы `category`
 --
 
 CREATE TABLE `category` (
@@ -65,7 +65,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category`
+-- Дамп данных таблицы `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `body`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `category` (`id`, `name`, `body`, `created_at`, `updated_at`, `delet
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Структура таблицы `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -92,7 +92,7 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `feedback`
+-- Дамп данных таблицы `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `user_id`, `body`, `ball`, `showhide`, `url`, `created_at`, `updated_at`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `feedback` (`id`, `user_id`, `body`, `ball`, `showhide`, `url`, `cre
 -- --------------------------------------------------------
 
 --
--- Table structure for table `maintests`
+-- Структура таблицы `maintests`
 --
 
 CREATE TABLE `maintests` (
@@ -119,7 +119,7 @@ CREATE TABLE `maintests` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `maintests`
+-- Дамп данных таблицы `maintests`
 --
 
 INSERT INTO `maintests` (`id`, `name`, `body`, `url`, `type`, `lang`, `created_at`, `updated_at`) VALUES
@@ -132,7 +132,7 @@ INSERT INTO `maintests` (`id`, `name`, `body`, `url`, `type`, `lang`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Структура таблицы `menus`
 --
 
 CREATE TABLE `menus` (
@@ -148,7 +148,7 @@ CREATE TABLE `menus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menus`
+-- Дамп данных таблицы `menus`
 --
 
 INSERT INTO `menus` (`id`, `position`, `menu_type`, `icon`, `name`, `title`, `parent_id`, `created_at`, `updated_at`) VALUES
@@ -160,7 +160,7 @@ INSERT INTO `menus` (`id`, `position`, `menu_type`, `icon`, `name`, `title`, `pa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_role`
+-- Структура таблицы `menu_role`
 --
 
 CREATE TABLE `menu_role` (
@@ -169,7 +169,7 @@ CREATE TABLE `menu_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menu_role`
+-- Дамп данных таблицы `menu_role`
 --
 
 INSERT INTO `menu_role` (`menu_id`, `role_id`) VALUES
@@ -179,7 +179,7 @@ INSERT INTO `menu_role` (`menu_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Структура таблицы `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -189,7 +189,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Дамп данных таблицы `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -209,7 +209,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Структура таблицы `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -221,7 +221,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Структура таблицы `product`
 --
 
 CREATE TABLE `product` (
@@ -238,7 +238,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `product`
+-- Дамп данных таблицы `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `body`, `price`, `picture`, `category_id`, `user_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -252,7 +252,7 @@ INSERT INTO `product` (`id`, `name`, `body`, `price`, `picture`, `category_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Структура таблицы `roles`
 --
 
 CREATE TABLE `roles` (
@@ -263,7 +263,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Дамп данных таблицы `roles`
 --
 
 INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`) VALUES
@@ -273,7 +273,7 @@ INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
@@ -289,7 +289,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -299,7 +299,7 @@ INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `email_verified_at`, `pas
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_logs`
+-- Структура таблицы `users_logs`
 --
 
 CREATE TABLE `users_logs` (
@@ -313,7 +313,7 @@ CREATE TABLE `users_logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users_logs`
+-- Дамп данных таблицы `users_logs`
 --
 
 INSERT INTO `users_logs` (`id`, `user_id`, `action`, `action_model`, `action_id`, `created_at`, `updated_at`) VALUES
@@ -339,42 +339,42 @@ INSERT INTO `users_logs` (`id`, `user_id`, `action`, `action_model`, `action_id`
 (20, 2, 'updated', 'users', 2, '2018-10-27 11:02:54', '2018-10-27 11:02:54');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `catalogs`
+-- Индексы таблицы `catalogs`
 --
 ALTER TABLE `catalogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `category`
+-- Индексы таблицы `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feedback`
+-- Индексы таблицы `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `maintests`
+-- Индексы таблицы `maintests`
 --
 ALTER TABLE `maintests`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menus`
+-- Индексы таблицы `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `menus_name_unique` (`name`);
 
 --
--- Indexes for table `menu_role`
+-- Индексы таблицы `menu_role`
 --
 ALTER TABLE `menu_role`
   ADD UNIQUE KEY `menu_role_menu_id_role_id_unique` (`menu_id`,`role_id`),
@@ -382,112 +382,112 @@ ALTER TABLE `menu_role`
   ADD KEY `menu_role_role_id_index` (`role_id`);
 
 --
--- Indexes for table `migrations`
+-- Индексы таблицы `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Индексы таблицы `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `product`
+-- Индексы таблицы `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `roles`
+-- Индексы таблицы `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Индексы таблицы `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `users_logs`
+-- Индексы таблицы `users_logs`
 --
 ALTER TABLE `users_logs`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `catalogs`
+-- AUTO_INCREMENT для таблицы `catalogs`
 --
 ALTER TABLE `catalogs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- AUTO_INCREMENT для таблицы `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `maintests`
+-- AUTO_INCREMENT для таблицы `maintests`
 --
 ALTER TABLE `maintests`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `menus`
+-- AUTO_INCREMENT для таблицы `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT для таблицы `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT для таблицы `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `users_logs`
+-- AUTO_INCREMENT для таблицы `users_logs`
 --
 ALTER TABLE `users_logs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- Constraints for dumped tables
+-- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Constraints for table `menu_role`
+-- Ограничения внешнего ключа таблицы `menu_role`
 --
 ALTER TABLE `menu_role`
   ADD CONSTRAINT `menu_role_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE,

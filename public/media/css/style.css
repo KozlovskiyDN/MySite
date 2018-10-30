@@ -101,13 +101,14 @@ margin:0 auto;
 
 * {box-sizing: border-box;}
 .caption-shadow {
-  width: 400px;
-  margin: 50px auto 0;
+  width: 200px;
+  margin: 20px;
   position: relative;
   border: 5px solid #FAAB1B;
 }
 .caption-shadow img {
   max-width: 100%;
+  margin:0 auto 20px;
   height: auto;
   display: block;
 }

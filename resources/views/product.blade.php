@@ -16,6 +16,8 @@
 	
 	<p>{!!$obj->body!!}</p>
 
+<a class="btn feed btn-lg btn-success" href="{{asset('basket/add/'.$obj->id)}}"> Положить в корзину </a>
+<br />
 
-	
+
 @endsection
