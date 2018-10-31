@@ -36,6 +36,7 @@ Route::get('basket/dell/{id}','BasketController@getDell');
 
 Route::get('basket/clear','BasketController@getClear');
 
+Route::post('order', 'OrderController@postOrder');
 
 /* 
 Всегда в конце файла!
