@@ -38,6 +38,11 @@ Route::get('basket/clear','BasketController@getClear');
 
 Route::post('order', 'OrderController@postOrder');
 
+Route::get('admin/order/one/{id}', 'Admin\OrderController@getIndex');
+
+
+
+
 /* 
 Всегда в конце файла!
  */
