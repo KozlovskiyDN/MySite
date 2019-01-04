@@ -40,6 +40,8 @@ Route::post('order', 'OrderController@postOrder');
 
 Route::get('admin/order/one/{id}', 'Admin\OrderController@getIndex');
 
+Route::post('ajax','AjaxController@postIndex');
+
 
 
 

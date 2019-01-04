@@ -2,7 +2,8 @@
 @section("content")
 @section('scripts')
  @parent
-   <script src="{{ asset('media/js/my.js') }}?version=7" defer></script>
+<script src="{{ asset('media/js/my.js') }}?version=7" defer></script>
+<script src="{{ asset('media/js/modal.js') }}?version=8" defer></script>
 
 @endsection
 <h2>Категории</h2>
@@ -22,9 +23,9 @@
 </hr>
 <div class="panel-heading">
 @if($one->picture)
-<img class="product" src="{{asset('uploads/thumb/'.$one->picture)}}"/>
+<img class="product" id="{{$one->id}}" src="{{asset('uploads/thumb/'.$one->picture)}}"/>
 @else 
-<img class="product" src="{{asset('media/img/no.png')}}"/>	
+<img class="product" id="{{$one->id}}" src="{{asset('media/img/no.png')}}"/>	
 @endif
 <h3 class="panel-title">
 <a href="{{asset('product/'.$one->id)}}" class="product_link">

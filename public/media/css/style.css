@@ -132,6 +132,55 @@ margin:0 auto;
   box-shadow: 0 -10px 20px -5px hsla(0, 0%, 0%, .4);
 }
 
+.modal-window{
+	position: fixed;
+    top: 100px;
+    left: 50%;
+    width: 600px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+    z-index: 99;
+    margin-left: -300px;
+	
+	
+}
+.modal-close{
+	position:absolute;
+	top:-3px;
+	right:1px;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	color:red;
+	font-size:24px;
+}
+.modal-close:before {
+	position:relative;
+	top:-5px;
+	content:"Close";
+	font-size:12px;
+	
+}
+
+
+#overlay {
+	background:black;
+	opacity: 0.7;
+	position:fixed;
+	height:100%;
+	width:100%;
+	left:0;
+	top:0;
+	z-index:98;
+	
+	
+}
+
+
+
 
 
 
