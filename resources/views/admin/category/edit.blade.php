@@ -1,6 +1,12 @@
 @extends('admin.layouts.master')
 
+@section('scripts')
+@parent
+<script src="{{asset ('js/parse.js')}}"></script>
+@endsection
+
 @section('content')
+
 
 <div class="row">
     <div class="col-sm-10 col-sm-offset-2">
@@ -40,5 +46,18 @@
 </div>
 
 {!! Form::close() !!}
+<div style="width:100%; height:5px; margin:10px;" class="bg-primary"></div>
+<h1 style="margin-left:10px;">Спарсить информацию с ресурса Aliexpress</h1>
+<p style="margin-left:10px;">Вставте ссылку на интересующий католог и нажмите кнопку "Спарсить"</p>
+<div style="width:100%; height:5px; margin:10px;" class="bg-primary"></div>
+<form>
+<input type="text" class="form-control" id="parse_aliexpress"  placeholder="Enter URL">
+<button type="button" class="parse btn btn-primary" value="Parse from Aliexpress" data-id="{{$category->id}}">спарсить</button>
+</form>
+<div style="width:100%; height:5px; margin:10px;" class="bg-primary"></div>
+<div id="empty"></div>
+<div style="width:100%; height:5px; margin:10px;" class="bg-primary"></div>
+
+
 
 @endsection

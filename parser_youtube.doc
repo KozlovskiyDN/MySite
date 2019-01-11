@@ -1,0 +1,100 @@
+<html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <style>
+            body {
+            font-size:18px !important;
+            font-family: "Times New Roman";
+            }
+            </style>
+            </head>
+            <body>
+            <div class="document">
+                <h1 align="center">
+                    Парсим youtube.com
+                </h1><br /><b>Авторы</b> <a href="http://erud.by/user/Михалькевич Александр Викторович">Михалькевич Александр Викторович</a> , <a href="http://mikhalkevich.colony.by" />http://mikhalkevich.colony.by</a> <p></p><div><b>1</b> <a href="#11">Инструментарий</a></div><div><b>2</b> <a href="#21">Обновление</a></div><div><b>3</b> <a href="#31">Установка модуля DomCrawler</a></div><div><b>4</b> <a href="#41">Интерфейс</a></div><div><b>5</b> <a href="#51">Имплемент Youtube.php</a></div><div><b>6</b> <a href="#61">Замена пробелов символом +</a></div><a name="11"></a><br /><b> 1 Инструментарий</b><p><p>В примере задействованы следующие инструменты</p>
+
+<p>Apache - сервер;</p>
+
+<p>MySQL - сервер баз данных;</p>
+
+<p>PHP 7.2 - язык программирования;</p>
+
+<p>Laravel - PHP фрэймворк;</p></p><a name="21"></a><br /><b> 2 Обновление</b><p><p>Обновим менеджер зависимостей Composer</p>
+
+<pre>
+composer self-update</pre></p><a name="31"></a><br /><b> 3 Установка модуля DomCrawler</b><p><p>После обновления менеджера зависимостей, передем в папку с проектом:</p>
+
+<pre>cd /var/www/laravel</pre>
+<p>Подключим зависимость DomCrawler с помощью следующей команды:</p>
+<pre>
+ composer require symfony/dom-crawler</pre></p><a name="41"></a><br /><b> 4 Интерфейс</b><p><p>В папке /app создадим папку /Parser. В ней файл ParseContract.php. Рассмотрим содержимое файла.</p>
+
+<pre>
+<code>
+namespace App\Parser;
+
+Interface ParseContract
+{
+    public function getParse();
+    //public function text($obj, $val = null);
+    //public function html($obj, $val = null);
+}
+            </code>
+</pre></p><a name="51"></a><br /><b> 5 Имплемент Youtube.php</b><p><p>Создаем еще один файл в этой же папке.</p>
+
+<p>Файл Youtube.php</p>
+
+<pre>
+namespace App\Parser;
+
+use Symfony\Component\DomCrawler\Crawler;
+//use App\ProductUser;
+use App\Googlenew;
+use Auth;
+
+class Youtube implements ParseContract
+{
+    use ParseTrait;
+    public $crawler;
+
+    public function __construct()
+    {
+        set_time_limit(0);
+        header(&#39;Content-Type: text/html; charset=utf-8&#39;);
+    }
+
+    public function getParse()
+    {
+        $ff = &#39;https://www.youtube.com/results?search_query=test&#39;;
+        $file = file_get_contents($ff);
+        $this-&gt;crawler = new Crawler($file);
+		$body=$this-&gt;crawler-&gt;filter(&#39;body&#39;)-&gt;html();
+		return $body;
+    }
+}
+</pre>
+<p>
+Получив, таким образом страницу парсинга, можем пройтись по необходимым 
+атрибутам:
+</p>
+<pre>
+    public function getParse($country="Belarus")
+    {
+        $ff = 'https://www.youtube.com/results?search_query='.$country;
+        $file = file_get_contents($ff);
+        $this->crawler = new Crawler($file);
+        $this->crawler->filter(".contains-addto")->each(function (Crawler $node, $i) {
+            $pic = $node->filter('img')->attr('src');
+            $this->body .= $pic.'<hr />';
+        });
+        return $this->body;
+    }
+</pre></p><a name="61"></a><br /><b> 6 Замена пробелов символом +</b><p><p>Пробелы в названиях Yutube заменяет символами +.</p>
+
+<pre>
+        $str = str_replace(" ", "+", $country);
+</pre></p><br /><b>Список используемых источников</b><p></p><p align="left"><b>http://erud.by/document/doc/parser_youtube</b></p>
+                    </div>
+                </body>
+            </html>
